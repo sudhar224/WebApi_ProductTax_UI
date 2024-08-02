@@ -118,8 +118,7 @@ namespace ProductWebsiteUI
             {
                 var product = response.Content.ReadAsAsync<SaneProducts>().Result;
                 return product;
-                lblErrorMessage.Text = "";
-                lblSuccessMessage.Text = "";
+               
             }
             else
             {
@@ -142,6 +141,8 @@ namespace ProductWebsiteUI
                     txt_Rate.Text = product.rate.HasValue ? product.rate.Value.ToString() : "";
                     txt_TaxPercentage.Text = product.tax_percentage.HasValue ? product.tax_percentage.Value.ToString() : "";
                     // Populate other fields as necessary
+                    lblErrorMessage.Text = "";
+                    lblSuccessMessage.Text = "";
                 }
                 else
                 {
